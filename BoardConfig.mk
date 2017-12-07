@@ -39,6 +39,8 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 
 #TWRP FLAGS
 TW_THEME := portrait_hdpi
+TW_INTERNAL_STORAGE_PATH := "/data/media/0"
+TW_INTERNAL_STORAGE_MOUNT_POINT := "/data"
 TARGET_USE_CUSTOM_LUN_FILE_PATH := "/config/usb_gadget/g1/functions/mass_storage.0/lun.0/file"
 TW_MAX_BRIGHTNESS := 255
 TW_DEFAULT_BRIGHTNESS := 125
