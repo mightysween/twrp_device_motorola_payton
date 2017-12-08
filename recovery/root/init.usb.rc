@@ -1,11 +1,9 @@
-# Copyright (C) 2012 The Android Open Source Project
-#
-# USB configuration common for all android devices
+# CUSTOM INIT.USB.RC for MOTO X4
 #
 
 on post-fs-data
-    chown system system /sys/class/android_usb/android0/f_mass_storage/lun/file
-    chmod 0660 /sys/class/android_usb/android0/f_mass_storage/lun/file
+	chown system system /config/usb_gadget/g1/functions/mass_storage.0/lun.0/file
+    chmod 0660 /config/usb_gadget/g1/functions/mass_storage.0/lun.0/file
     chown system system /sys/class/android_usb/android0/f_rndis/ethaddr
     chmod 0660 /sys/class/android_usb/android0/f_rndis/ethaddr
     mkdir /data/misc/adb 02750 system shell
