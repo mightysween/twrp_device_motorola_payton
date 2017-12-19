@@ -8,3 +8,4 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel
 
 $(call inherit-product-if-exists, build/target/product/full.mk)
+
