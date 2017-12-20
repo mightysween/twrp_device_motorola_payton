@@ -6,7 +6,7 @@ $(call inherit-product, build/target/product/full_base_telephony.mk)
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_MODEL="moto x4" \
-    TARGET_DEVICE="payton_sprout"
+    TARGET_DEVICE="payton"
 
 PRODUCT_NAME := full_payton
 PRODUCT_DEVICE := payton

@@ -1,5 +1,5 @@
 # Bootloader
-TARGET_NO_BOOTLOADER := true
+#TARGET_NO_BOOTLOADER := true
 TARGET_BOOTLOADER_BOARD_NAME := sdm660
 
 # Platform
@@ -38,26 +38,19 @@ BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200,n8 androidboot.console=ttyMSM0 ea
 #TARGET_KERNEL_ARCH := arm64
 BOARD_MKBOOTIMG_ARGS := --base 0x00000000 --pagesize 4096 --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --tags_offset 0x00000100   --cmdline 'console=ttyMSM0,115200,n8 androidboot.console=ttyMSM0 earlycon=msm_serial_dm,0xc170000 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 sched_enable_hmp=1 sched_enable_power_aware=1 service_locator.enable=1 swiotlb=1 androidboot.configfs=true androidboot.usbcontroller=a800000.dwc3 androidboot.hab.csv=1 androidboot.hab.product=payton androidboot.hab.cid=50 buildvariant=user veritykeyid=id:b640f6ee9102b88daa3450b13ef25fc9eb143d63'  
 
-#TESTS
-#TARGET_NO_RECOVERY := true
-TARGET_NO_KERNEL := false
-BOARD_USES_RECOVERY_AS_BOOT := true
-BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
-
-
 
 #PARTITIONS
 TARGET_USERIMAGES_USE_EXT4 := true 
-BOARD_BOOTIMAGE_PARTITION_SIZE := 268435456
+BOARD_BOOTIMAGE_PARTITION_SIZE := 268238848
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 17314086912
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 82996817920
-#BOARD_PERSISTIMAGE_PARTITION_SIZE := tbd
+BOARD_OEMIMAGE_PARTITION_SIZE := 2415919104
+BOARD_PERSISTIMAGE_PARTITION_SIZE := 134217728
 BOARD_PERSISTIMAGE_FILE_SYSTEM_TYPE := ext4
-
-#TWRP FLAGS
-BOARD_SUPPRESS_SECURE_ERASE := true
-TARGET_RECOVERY_QCOM_RTC_FIX := true
 BOARD_FLASH_BLOCK_SIZE := 131072
+
+#RECOVERY
+#RECOVERY_VARIANT := twrp
 TW_THEME := portrait_hdpi
 TW_INCLUDE_CRYTPO := true
 TW_EXTERNAL_STORAGE_PATH := /external_sd
@@ -71,9 +64,9 @@ TW_INCLUDE_FB2PNG := true
 AB_OTA_UPDATER := true
 TW_HAS_NO_RECOVERY_PARTITION := true
 #TW_EXCLUDE_SUPERSU := true
-TW_EXCLUDE_MTP := true
+#TW_EXCLUDE_MTP := true
 
 #TESTING
-TW_RECOVERY_ADDITIONAL_RELINK_FILES := $(OUT)/system/lib64/libhardware_legacy.so
-
-
+#TW_RECOVERY_ADDITIONAL_RELINK_FILES := $(OUT)/system/lib64/libhardware_legacy.so
+BOARD_SUPPRESS_SECURE_ERASE := true
+TARGET_RECOVERY_QCOM_RTC_FIX := true
